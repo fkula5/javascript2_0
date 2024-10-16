@@ -21,6 +21,7 @@
       .then((array) => {
         answer.innerHTML = "";
         array.forEach(function (item, index) {
+          console.log(index, item);
           answer.innerHTML += `<div class="entry"><h2>${index} - ${item.title} </h2>
           <p>${item.body}</p></div>`;
         });
@@ -32,6 +33,7 @@
       .then((response) => response.json())
       .then((array) => {
         setTimeout(() => {
+          console.log(array);
           answer.innerHTML = "<hr>";
           answer.innerHTML += `<div class="entry"><h2> ${array.title} </h2>
         <p>${array.body}</p></div>`;
@@ -54,6 +56,7 @@
     })
       .then((res) => res.json())
       .then((array) => {
+        console.log(array);
         answer.innerHTML = `Dodałem posta o id: ${array.id}`;
       });
   });
