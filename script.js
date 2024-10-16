@@ -15,11 +15,10 @@
   });
 
   cw1.addEventListener("click", function () {
-    answer.innerHTML = "Loading...";
+    alert("Loading...");
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
       .then((array) => {
-        answer.innerHTML = "";
         array.forEach(function (item, index) {
           console.log(index, item);
           answer.innerHTML += `<div class="entry"><h2>${index} - ${item.title} </h2>
@@ -57,7 +56,7 @@
       .then((res) => res.json())
       .then((array) => {
         console.log(array);
-        answer.innerHTML = `Dodałem posta o id: ${array.id}`;
+        answer.innerHTML = `Dodano posta o id: ${array.id}`;
       });
   });
 })();
