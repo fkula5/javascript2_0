@@ -25,23 +25,36 @@
           <p>${item.body}</p></div>`;
         });
       });
+  });
 
+  cw2.addEventListener("click", function () {
     fetch("https://jsonplaceholder.typicode.com/posts/1")
       .then((response) => response.json())
       .then((array) => {
         setTimeout(() => {
           answer.innerHTML = "<hr>";
           answer.innerHTML += `<div><h2> ${array.title} </h2>
-          <p>${array.body}</p></div>`;
+        <p>${array.body}</p></div>`;
         }, 5000);
       });
   });
 
-  cw2.addEventListener("click", function () {
-    //TODO
-  });
-
   cw3.addEventListener("click", function () {
-    //TODO
+    answer.innerHTML = "Processing...";
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+      body: JSON.stringify({
+        title: "foo",
+        body: "bar",
+        userId: 1,
+      }),
+    })
+      .then((res) => res.json())
+      .then((array) => {
+        answer.innerHTML = `Dodałem posta o id: ${array.id}`;
+      });
   });
 })();
