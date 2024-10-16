@@ -21,7 +21,7 @@
       .then((array) => {
         answer.innerHTML = "";
         array.forEach(function (item, index) {
-          answer.innerHTML += `<div><h2>${index} - ${item.title} </h2>
+          answer.innerHTML += `<div class="entry"><h2>${index} - ${item.title} </h2>
           <p>${item.body}</p></div>`;
         });
       });
@@ -33,7 +33,7 @@
       .then((array) => {
         setTimeout(() => {
           answer.innerHTML = "<hr>";
-          answer.innerHTML += `<div><h2> ${array.title} </h2>
+          answer.innerHTML += `<div class="entry"><h2> ${array.title} </h2>
         <p>${array.body}</p></div>`;
         }, 5000);
       });

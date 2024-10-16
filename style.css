@@ -2,3 +2,16 @@ html {
   height: 100%;
   width: 100%;
 }
+
+.entry {
+  border: 5px solid black;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.entry>h2 {
+  font-size: 1.5em;
+  font-family: sans-serif;
+  color: #4f4c41;
+}
