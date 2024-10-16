@@ -59,4 +59,10 @@
         answer.innerHTML = `Dodano posta o id: ${array.id}`;
       });
   });
+
+  fetch("https://my-json-server.typicode.com/trak2025zz/json-server/posts")
+    .then((res) => res.json())
+    .then((array) => {
+      console.log(array);
+    });
 })();
